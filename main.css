@@ -71,6 +71,15 @@ body {
   transform: translateY(2px) scale(1); /* делаем кнопку немного опущенной при нажатии */
 }
 
+@media only screen and (max-width: 767px) {
+  .button:active {
+    background-color: rgb(50, 46, 46); /* возвращаем фоновый цвет кнопки */
+    transform: translateY(
+      2px
+    ); /* делаем кнопку немного опущенной при нажатии */
+  }
+}
+
 .input-field {
   padding: 5px 5px;
   background-color: rgb(198, 198, 209);
@@ -78,12 +87,6 @@ body {
   border: var(--border-color) 2px;
   color: #2f2e2e;
   min-inline-size: 280px;
-}
-
-.button.pressed {
-  /* Ваши стили для кнопки при нажатии */
-  background-color: #555; /* Изменение цвета фона при нажатии */
-  transform: translateY(1px); /* Изменение положения кнопки при нажатии */
 }
 
 /* Стили шара + анимация */
