@@ -180,6 +180,10 @@ body {
   .magic-ball:hover {
     transform: none;
   }
+
+  .magic-ball:hover::after {
+    transform: none;
+  }
 }
 
 /* Disclaimer */
