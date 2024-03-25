@@ -104,6 +104,8 @@ form.addEventListener("submit", function (event) {
 function handleTouchStart(event) {
   event.preventDefault(); // Предотвращаем стандартное действие браузера
   showElement(); // Вызываем функцию для отображения результата
+  button.style.backgroundColor = "rgb(50, 46, 46)";
+  button.style.transform = "translateY(2px) scale(0.8)";
 }
 
 // Добавляем обработчик события касания для кнопки
