@@ -1,0 +1,192 @@
+:root {
+  --backgound-color: #4d4848;
+  --text-color: #ffffff;
+  --border-color: #ffffff;
+}
+
+body {
+  display: flex;
+  block-size: 100vh;
+  min-inline-size: 320px;
+  flex-direction: column;
+  background-color: var(--backgound-color);
+  gap: 10px;
+}
+
+.page {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.container {
+  display: flex;
+  max-inline-size: 600px;
+  flex-direction: column;
+  padding: 5px 10px;
+  margin-inline: auto;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color);
+  gap: 30px;
+}
+
+/* Поле Input и кнопка Спросить */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.button {
+  padding: 5px 13px;
+  border-radius: 5px;
+  background-color: rgb(50, 46, 46);
+  color: var(--text-color);
+  border: var(--border-color) 1px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px 0 rgb(21, 22, 24);
+  transition: 0.3s;
+}
+
+/* Поднмаем кнопку при наведении */
+
+.button:hover {
+  transform: translate(0, -2px) scale(1.1);
+  box-shadow: 0 20px 20px 0 rgb(12, 13, 14);
+}
+
+/* Опускаем кнопку при нажатии */
+
+.button:active {
+  background-color: #333; /* изменяем цвет фона кнопки при нажатии */
+  color: var(--text-color); /* изменяем цвет текста кнопки при нажатии */
+  transform: translateY(2px) scale(1); /* делаем кнопку немного опущенной при нажатии */
+}
+
+.input-field {
+  padding: 5px 5px;
+  background-color: rgb(198, 198, 209);
+  border-radius: 10px;
+  border: var(--border-color) 2px;
+  color: #2f2e2e;
+  min-inline-size: 280px;
+}
+
+/* Стили шара + анимация */
+
+.magic-ball {
+  display: flex;
+  background-image: url(./images/frame1.png);
+  background-position: center center;
+  min-height: 320px;
+  min-width: 310px;
+  background-repeat: no-repeat;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  animation: ballIsOn 3s forwards;
+  cursor: pointer;
+}
+
+/* Анимация при запуске */
+
+@keyframes ballIsOn {
+  0% {
+    background-image: url("./images/frame1.png"); /* Первый кадр */
+  }
+  100% {
+    background-image: url("./images/frame2.png"); /* Второй кадр */
+  }
+}
+
+/* Анимация при вопросе */
+
+.magic-ball.animate {
+  animation-name: answer; /* Указываем новую анимацию */
+  animation-duration: 3s; /* Длительность анимации */
+  animation-fill-mode: forwards; /* Оставляем последний кадр после завершения анимации */
+}
+
+@keyframes answer {
+  0% {
+    background-image: url("./images/frame2.png"); /* Первый кадр */
+  }
+
+  50% {
+    background-image: url("./images/frame1.png"); /* Второй кадр */
+  }
+
+  100% {
+    background-image: url("./images/frame2.png"); /* Второй кадр */
+  }
+}
+
+/* Поле ответа на вопрос */
+
+.response {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Создание эффекта тени и приближения шара при наведении*/
+
+/* Шар и его приближение */
+
+.magic-ball {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+/* Увеличиваем масштаб тени при наведении */
+
+.magic-ball:hover {
+  transform: scale(1.1);
+}
+
+/* Тень под шаром */
+
+.magic-ball::after {
+  content: "";
+  position: absolute;
+  bottom: -20px; /* Расстояние между шаром и его тенью */
+  left: 50%; /* Выравнивание тени по центру шара */
+  transform: translateX(-50%); /* Смещение тени влево на 50% ширины шара */
+  width: 80%; /* Ширина тени */
+  height: 20%; /* Высота тени */
+  border-radius: 50%; /* Округление границ тени */
+  background-color: rgba(0, 0, 0, 0.501); /* Цвет тени */
+  filter: blur(4px); /* Размытие тени */
+  transition: transform 0.3s ease-in-out; /* Добавляем transition для плавной анимации */
+}
+
+.magic-ball:hover::after {
+  transform: translateX(-50%) scale(1.1); /* Увеличиваем масштаб тени при наведении */
+}
+
+/* Disclaimer */
+
+.disclaimer {
+  margin-top: 20px;
+}
+
+/* Footer/ Coopyright */
+
+.footer {
+  display: flex;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 12px;
+  margin-top: 21px;
+}

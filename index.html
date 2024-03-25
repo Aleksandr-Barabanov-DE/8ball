@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Магический Шар Восьмерка</title>
+
+    <!-- SEO Оптимизация -->
+
+    <meta
+      name="description"
+      content="Добро пожаловать в мир магии и предсказаний с Магическим Шаром Восьмерка! Получайте мудрые ответы на ваши вопросы, обретайте ясность и вдохновение, исследуя таинственные возможности шара восьмерки."
+    />
+    <meta
+      name="keywords"
+      content="волшебный шар, шар 8, принятие решений, предсказания, магия, восьмерка, ответы, вопросы, предсказание будущего, тайны, мудрость, вдохновение, интуиция"
+    />
+    <meta name="author" content="Александр Барабанов" />
+
+    <!-- Favicon -->
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Шрифты -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Стили -->
+
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- OG мета-теги -->
+
+    <meta
+      property="og:title"
+      content="Магический Шар 8. Волшебный Шар Восьмерка"
+    />
+    <meta
+      property="og:description"
+      content="Волшебный Шар Восьмерка. Шар для принятия решений"
+    />
+    <meta property="og:image" content="images/8-Ball.png" />
+    <meta property="og:url" content="URL вашей страницы" />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="welcome-message container">
+        <h1 class="visually-hidden">
+          Магический Шар 8. Волшебный Шар Восьмерка. Шар для принятия решений.
+        </h1>
+        <h2>Добро пожаловать!</h2>
+
+        <p>
+          Просто задайте вопрос и нажмите на магический шар или напишите вопрос
+          и нажмите кнопку "СПРОСИТЬ".
+        </p>
+      </section>
+
+      <section class="form-container container">
+        <form action="#" class="form">
+          <label for="question" class="visually-hidden"
+            >Напишите ваш вопрос</label
+          >
+          <input
+            type="text"
+            class="input-field"
+            placeholder=" Напишите свой вопрос здесь"
+          />
+          <button class="button animation" type="button" aria-label="Спросить">
+            СПРОСИТЬ
+          </button>
+        </form>
+      </section>
+
+      <section class="magic-ball-container">
+        <div
+          class="magic-ball cursor animate click shake container"
+          role="button"
+          aria-label="Магический шар"
+        >
+          <div class="triangle"></div>
+
+          <!-- Area-liva polite устанавливается для чтения ответов screenreader -->
+
+          <div class="response fade-in" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="disclaimer container">
+        <p>
+          Пожалуйста, имейте в виду, что ответы, полученные от магического шара,
+          предназначены только для развлечения и не должны рассматриваться как
+          серьезные прогнозы или консультации.
+        </p>
+        <p>
+          "Магический Шар Восьмерка" не несет ответственности за решения,
+          принятые на основе его ответов. Используйте его на свой страх и риск.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <p>© 2024 Магический Шар Восьмерка. Автор: Александр Барабанов.</p>
+      <p>e-mail: alexfreiman.de@gmail.com. Все права защищены.</p>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>

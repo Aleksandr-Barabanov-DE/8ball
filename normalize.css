@@ -1,0 +1,177 @@
+/**
+  Нормализация блочной модели и сброс отступов
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+
+  block-size: 100dvh;
+
+  /**
+    Плавный скролл
+   */
+
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+
+  min-block-size: 100%;
+
+  /**
+    Унифицированный интерлиньяж
+   */
+
+  line-height: 1.5;
+}
+
+/**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+   Убираем стандартный маркер маркированному списка
+  */
+
+ul,
+ol {
+  list-style: none;
+}
+
+/**
+   Упрощаем работу с изображениями и видео
+  */
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+video {
+  inline-size: 100%;
+}
+
+/**
+   Наследуем свойства шрифт для полей ввода
+  */
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/**
+   Приводим к единому цвету svg-элементы
+  */
+
+svg *[fill] {
+  fill: currentColor;
+}
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  */
+
+svg * {
+  transition-property: fill, stroke;
+}
+
+/* Скрываем scrollbar для Chrome, Safari и Opera */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Скрываем scrollbar для IE, Edge и Firefox */
+
+body {
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Добавляем класс для скрытия элементов */
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Убираем отображение кавычек в цитатах */
+
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* Сливаем границы таблицы и убираем расстояние между ними */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
