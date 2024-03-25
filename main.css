@@ -74,9 +74,7 @@ body {
 @media only screen and (max-width: 767px) {
   .button:active {
     background-color: rgb(50, 46, 46); /* возвращаем фоновый цвет кнопки */
-    transform: translateY(
-      2px
-    ); /* делаем кнопку немного опущенной при нажатии */
+    transform: translateY(2px) scale(0.8); /* делаем кнопку немного опущенной при нажатии */
   }
 }
 
