@@ -113,3 +113,14 @@ button.addEventListener("touchstart", handleTouchStart);
 // Добавляем обработчик события касания для магического шара
 
 magicBall.addEventListener("touchstart", handleTouchStart);
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // Если пользователь открывает сайт с мобильного устройства, добавляем обработчик события для кнопки
+    var button = document.querySelector('.button');
+
+    button.addEventListener('touchstart', function() {
+      button.classList.add('pressed');
+    });
+  }
+});

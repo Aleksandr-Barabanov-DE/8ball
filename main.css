@@ -80,6 +80,12 @@ body {
   min-inline-size: 280px;
 }
 
+.button.pressed {
+  /* Ваши стили для кнопки при нажатии */
+  background-color: #555; /* Изменение цвета фона при нажатии */
+  transform: translateY(1px); /* Изменение положения кнопки при нажатии */
+}
+
 /* Стили шара + анимация */
 
 .magic-ball {
