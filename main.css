@@ -176,16 +176,6 @@ body {
   transform: translateX(-50%) scale(1.1); /* Увеличиваем масштаб тени при наведении */
 }
 
-@media screen and (max-width: 768px) {
-  .magic-ball:hover {
-    transform: none;
-  }
-
-  .magic-ball:hover::after {
-    transform: none;
-  }
-}
-
 /* Disclaimer */
 
 .disclaimer {
