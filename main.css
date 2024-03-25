@@ -94,6 +94,7 @@ body {
   justify-content: center;
   animation: ballIsOn 3s forwards;
   cursor: pointer;
+  margin-top: 25px;
 }
 
 /* Анимация при запуске */
